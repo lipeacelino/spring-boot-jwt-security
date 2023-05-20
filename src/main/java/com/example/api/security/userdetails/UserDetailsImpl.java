@@ -21,6 +21,13 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
+        /*
+         Este método converte a lista de papéis (roles) associados ao usuário
+         em uma coleção de GrantedAuthorities, que é a forma que o Spring Security
+         usa para representar papéis. Isso é feito mapeando cada papel para um
+         novo SimpleGrantedAuthority, que é uma implementação simples de
+         GrantedAuthority que apenas envolve uma string que representa o nome do papel.
+        */
         return user.getRoles()
                 .stream()
                 .map(role -> new SimpleGrantedAuthority(role.getName().name()))
