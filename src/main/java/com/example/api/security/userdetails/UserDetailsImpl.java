@@ -26,7 +26,7 @@ public class UserDetailsImpl implements UserDetails {
          em uma coleção de GrantedAuthorities, que é a forma que o Spring Security
          usa para representar papéis. Isso é feito mapeando cada papel para um
          novo SimpleGrantedAuthority, que é uma implementação simples de
-         GrantedAuthority.
+         GrantedAuthority
         */
         return user.getRoles()
                 .stream()
